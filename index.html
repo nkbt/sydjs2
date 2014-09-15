@@ -1,0 +1,309 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=1024"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <title>SydJS - Modular, please.</title>
+
+  <meta name="description"
+        content="Easy steps to make your do-it-all node app into bunch of small and clean modules."/>
+  <meta name="author" content="Nik Butenko"/>
+
+  <link
+    href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
+    rel="stylesheet"/>
+
+  <link href="css/impress-demo.css" rel="stylesheet"/>
+
+  <link rel="shortcut icon" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+
+  <link rel="stylesheet" href="css/highlight/tomorrow-night-eighties.css">
+</head>
+
+<body class="impress-not-supported">
+
+
+<div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented
+    with a simplified version of this presentation.</p>
+
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b>
+    browser.</p>
+</div>
+
+<div id="impress" data-transition-duration="500">
+
+<div id="title" class="step" data-x="0" data-y="0" data-scale="1">
+  <p class="try">Modular, please.</p>
+
+  <p>Easy steps to make your do-it-all node app into bunch of small and clean modules.</p>
+
+  <div class="footnote">
+    <p>Sydney, 17th September 2014</p>
+
+    <p>Nik Butenko</p>
+  </div>
+</div>
+
+<div id="npm" class="step slide" data-x="1100" data-y="0">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+<div id="todo" class="step slide" data-x="2200" data-y="0">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+<div id="shared-package" class="step slide" data-x="0" data-y="1000">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="shared-code" class="step slide" data-x="1100" data-y="1000">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="lib-package" class="step slide" data-x="2200" data-y="1000">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="lib-code" class="step slide" data-x="3300" data-y="1000">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="app-package" class="step slide" data-x="4400" data-y="1000">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="app-code" class="step slide" data-x="5500" data-y="1000">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="expected" class="step slide" data-x="0" data-y="2000">
+  <h2>Some text</h2>
+  <pre class="hljs"><code> > node app
+<span class="hljs-function">alwaysNo</span>() should say "No." <span
+  class="hljs-string">No.</span>
+<span class="hljs-function">lib.alwaysYes</span>() should say "Yes!" <span
+  class="hljs-string">Yes!</span>
+<span style="background: rgba(0,255,0,0.2)"><span class="hljs-function">alwaysNo</span>()       should say "No."    <span
+  class="hljs-string">No.</span></span>
+  </code></pre>
+</div>
+
+
+<div id="actual" class="step slide" data-x="1100" data-y="2000">
+  <h2>Some text</h2>
+  <pre class="hljs"><code> > node app
+<span class="hljs-function">alwaysNo</span>() should say "No." <span
+  class="hljs-string">No.</span>
+<span class="hljs-function">lib.alwaysYes</span>() should say "Yes!" <span
+  class="hljs-string">Yes!</span>
+<span style="background: rgba(255,0,0,0.3)"><span class="hljs-function">alwaysNo</span>()       should say "No."    <span
+  class="hljs-string">Yes!</span></span>
+  </code></pre>
+</div>
+
+
+<div id="wat" class="step slide" data-x="1700" data-y="3000" data-rotate-x="-90" data-rotate-y="20"
+     data-scale="2">
+  <h2>Some picture</h2>
+  <img src="img/wat.jpg" style="display: block; width: 100%;" alt=""/>
+</div>
+
+
+<div id="files" class="step slide" data-x="2200" data-y="2000" data-scale="1">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="missing" class="step slide" data-x="3300" data-y="2000" data-scale="1">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="why" class="step slide" data-x="5000" data-y="2300" data-scale="2">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="fix1" class="step slide" data-x="1100" data-y="4300" data-scale="1">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="fix2" class="step slide" data-x="2200" data-y="4300" data-scale="1">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+<div id="fix3" class="step slide" data-x="3300" data-y="4300" data-scale="1">
+  <h2>Some text</h2>
+  <pre><code class="json hljs">
+{
+  "some": "code",
+}
+  </code></pre>
+</div>
+
+
+<div id="thanks" class="step slide" data-x="4400" data-y="5300" data-rotate-x="90"
+     data-rotate-y="90" data-scale="3">
+  <b>Thanks!</b>
+
+  <p><a href="https://github.com/nkbt/sydjs2" target="_blank">https:// github.com /
+    <strong>nkbt</strong> / sydjs2</a></p>
+
+  <p><a href="http://butenko.me" target="_blank">http:// <strong>butenko.me</strong></a></p>
+</div>
+
+<div id="overview" class="step" data-x="2200" data-y="3000" data-scale="10">
+</div>
+
+</div>
+
+<ul id="nav">
+</ul>
+
+<script type="text/javascript" src="js/impress.js"></script>
+<script type="text/javascript" src="js/highlight.pack.js"></script>
+
+<script>
+
+  (function () {
+
+    var codes = {},
+      timers = {};
+
+    function typeText(id, $element, callback) {
+      var code;
+      if (!!timers[id]) {
+        clearTimeout(timers[id]);
+        timers[id] = null;
+      }
+      if (!codes[id]) {
+        codes[id] = $element.innerHTML.trim();
+      }
+      code = codes[id].split('');
+      $element.innerHTML = '';
+      $element.style.display = 'block';
+
+      function typeChar() {
+        if (code.length < 1) {
+          return callback();
+        }
+        var char = code.shift();
+        if (char === '\t') {
+          char = '  ';
+        }
+        $element.innerHTML = [$element.innerHTML, char].join('');
+        timers[id] = setTimeout(typeChar, (char === '\n') ? 100 : 10);
+      }
+
+      return typeChar();
+    }
+
+
+    document.body.addEventListener("impress:stepenter", function (event) {
+      var $code = event.target.querySelector('code.hljs:not(.processed)'),
+        code;
+      if (!$code) {
+        return null;
+      }
+      $code.classList.add('processed');
+      return typeText(event.target.id, $code, function () {
+        hljs.highlightBlock($code);
+      });
+    }, false);
+
+    Array.prototype.slice.apply(document.querySelectorAll('pre code.hljs')).forEach(function (element) {
+      element.style.display = 'none';
+    });
+
+    Array.prototype.slice.apply(document.querySelectorAll('[id].step')).forEach(function ($element) {
+      var $a = document.createElement('a'),
+        $li = document.createElement('li'),
+        $h = $element.querySelector('h2, h3');
+      $li.appendChild($a);
+      $a.title = $h && $h.innerHTML || $element.id;
+      $a.href = ['#', $element.id].join('');
+      $a.innerHTML = $element.id;
+      return document.querySelector('#nav').appendChild($li);
+    });
+
+    impress().init();
+  }());
+</script>
+</body>
+</html>
