@@ -5,7 +5,7 @@
 /* Tomorrow Comment */
 .hljs-comment,
 .hljs-title {
-  color: #999999;
+  color: #777;
 }
 
 /* Tomorrow Red */
@@ -76,9 +76,11 @@
 
 .hljs {
   display: block;
+  overflow-x: auto;
   background: #2d2d2d;
   color: #cccccc;
   padding: 0.5em;
+  -webkit-text-size-adjust: none;
 }
 
 .coffeescript .javascript,

@@ -284,12 +284,12 @@ a:focus {
     3D positioning along Z axis.
 */
 
-#title {
+.title {
 	/*text-align: center;*/
     padding: 0;
 }
 
-#title .try {
+.title .try {
     font-size: 64px;
     position: absolute;
     top: -1.7em;
@@ -303,7 +303,7 @@ a:focus {
     transform:         translateZ(20px);
 }
 
-#title h1 {
+.title h1 {
     font-size: 100px;
 
     -webkit-transform: translateZ(50px);
@@ -313,7 +313,7 @@ a:focus {
     transform:         translateZ(50px);
 }
 
-#title .footnote {
+.title .footnote {
     margin-top: 140px;
     font-size: 32px;
 }
