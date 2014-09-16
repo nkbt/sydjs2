@@ -293,8 +293,8 @@ a:focus {
     font-size: 64px;
     position: absolute;
     top: -1.7em;
-    left: 0;
-	white-space: nowrap;
+    left: 0; 
+    white-space: nowrap;
 
     -webkit-transform: translateZ(20px);
     -moz-transform:    translateZ(20px);
@@ -302,7 +302,10 @@ a:focus {
     -o-transform:      translateZ(20px);
     transform:         translateZ(20px);
 }
-
+.title .center {
+    width: 100%;
+    text-align: center;
+}
 .title h1 {
     font-size: 100px;
 

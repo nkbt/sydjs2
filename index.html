@@ -221,10 +221,8 @@ node app
     <li>More tests</li>
     <li>100% coverage!</li>
     <li>Documentation</li>
+    <li>Build process</li>
   </ol>
-  <br/><br/>
-  <h2>What do we have now?</h2>
-  <p>...</p>
 
 </div>
 
@@ -240,6 +238,7 @@ node app
     <li>More tests&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>Look above</b></li>
     <li>100% coverage!&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>WAT?</b></li>
     <li>Documentation&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>(╯°□°）╯︵ ┻━┻</b></li>
+    <li>Build process&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>Mmmmkay...</b></li>
   </ol>
 
 </div>
@@ -259,14 +258,14 @@ node app
   <h2>Init v.2</h2>
   <!--@formatter:off-->
   <script type="text/plain" data-lang="bash">
-mkdir sydjs2-module
-cd sydjs2-module
+mkdir awesome
+cd awesome
 git init
 git remote add template https://github.com/nkbt/npm-template.git
 git pull template master
-# replace 'npm-template' with 'sydjs2-module', delete unwanted
+# replace 'npm-template' with 'awesome', delete unwanted
 git commit -m "Init"
-git remote add origin git@github.com:nkbt/sydjs2-module.git
+git remote add origin git@github.com:nkbt/awesome.git
 git push -u origin master
    </script>
   <!--@formatter:on-->
@@ -275,62 +274,149 @@ git push -u origin master
 </div>
 
 
-<div id="missing" class="step slide" data-x="3300" data-y="2000" data-scale="1">
-  <h2>Now you have:</h2>
-  <ol>
-    <li>Configurable module template</li>
-    <li>Custom Errors</li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ol>
+<div id="got_it" class="title step" data-x="3300" data-y="2000">
+  <p class="try center">And now we have</p>
 </div>
 
-
-<div id="why" class="step slide" data-x="5000" data-y="2300" data-scale="2">
-  <h2>Some text</h2>
+<div id="config" class="step slide" data-x="5000" data-y="2300" data-scale="2">
+  <h2>Configurable module <i>[lib/awesome.js]</i></h2>
   <!--@formatter:off-->
-  <pre><code class="json hljs">
-{
-  "some": "code",
+  <script type="text/plain" data-lang="javascript">
+var defaults = {
+	name: 'Awesome'
+};
+
+function Awesome(options) {
+  this.options = _.clone(defaults);
+  if (!_.isEmpty(options)) {
+    this.setOptions(options);
+  }
 }
-  </code></pre>
+
+// ...
+module.exports = Awesome;
+   </script>
   <!--@formatter:on-->
 </div>
 
 
-<div id="fix1" class="step slide" data-x="1100" data-y="4300" data-scale="1">
-  <h2>Some text</h2>
+<div id="errors" class="step slide" data-x="1100" data-y="4300" data-scale="1">
+  <h2>Custom Errors <i>[lib/errors.js]</i></h2>
   <!--@formatter:off-->
-  <pre><code class="json hljs">
-{
-  "some": "code",
-}
-  </code></pre>
+  <script type="text/plain" data-lang="javascript">
+var errors = require('./errors');
+// errors.Error instanceof Error
+// errors.OptionsRequiredError instanceof errors.Error
+
+function Awesome(options) {  /* ... */ }
+util.inherits(Awesome, EventEmitter);
+
+Awesome.prototype.setOptions = function (options) {
+  if (!_.isObject(options)) {
+    return this.emit('error', new errors.OptionsRequiredError());
+  }
+  // ...
+};
+
+Awesome.errors = errors;
+
+module.exports = exports = Awesome;
+  </script>
   <!--@formatter:on-->
 </div>
 
 
-<div id="fix2" class="step slide" data-x="2200" data-y="4300" data-scale="1">
-  <h2>Some text</h2>
+<div id="build" class="step slide" data-x="2200" data-y="4300" data-scale="1">
+  <h2>Build process <i>[Gruntfile.js]</i></h2>
+  <p>+ npm scripts</p>
+  <br/>
   <!--@formatter:off-->
-  <pre><code class="json hljs">
-{
-  "some": "code",
-}
-  </code></pre>
+  <script type="text/plain" data-lang="javascript">
+$ npm run
+Available scripts in the npm-template package:
+  test
+    grunt
+  doc
+    JS_COV=1 grunt cov && grunt doc
+
+$ npm test
+# Will do JSHint tests and Mocha tests
+
+$ npm run doc
+# Will build coverage report and auto-documentation
+  </script>
   <!--@formatter:on-->
 </div>
 
-<div id="fix3" class="step slide" data-x="3300" data-y="4300" data-scale="1">
-  <h2>Some text</h2>
+<div id="tests" class="step slide" data-x="2200" data-y="4300" data-scale="1">
+  <h2>Tests <i>[test/lib.awesome.js]</i></h2>
   <!--@formatter:off-->
-  <pre><code class="json hljs">
-{
-  "some": "code",
+  <script type="text/plain" data-lang="javascript">
+describe('Awesome', function () {
+
+  it('should respond to [getOptions, setOptions] instance methods', function () {
+    expect(Awesome).to.respondTo('getOptions', 'setOptions');
+  });
+
+  it('should have [getDefaults] static method', function () {
+    expect(Awesome).itself.to.respondTo('getDefaults');
+  });
+
+  it('should have [errors] static property', function () {
+    expect(Awesome).to.have.property('errors');
+  });
+
+  // ...
 }
-  </code></pre>
+  </script>
   <!--@formatter:on-->
+</div>
+
+<div id="tests2" class="step slide" data-x="3300" data-y="4300" data-scale="1">
+  <h2>Moar tests</h2>
+  <!--@formatter:off-->
+  <script type="text/plain" data-lang="bash">
+> npm run test
+
+# ...
+
+Running "mochacli:test" (mochacli) task
+1..7
+ok 1 Awesome should respond to [getOptions, setOptions] instance methods
+ok 2 Awesome should have [getDefaults] static method
+ok 3 Awesome should have [errors] static property
+ok 4 Awesome should have default options pre-set
+ok 5 Awesome should have options.name set to "Test"
+ok 6 Awesome should not set any unexpected options
+ok 7 Awesome should emit OptionsRequiredError if no options passed
+# tests 7
+# pass 7
+# fail 0
+
+Done, without errors.
+  </script>
+  <!--@formatter:on-->
+</div>
+
+<div id="cov" class="step slide" data-x="3300" data-y="4300" data-scale="1">
+  <h2>100% coverage <i>[doc/coverage.html]</i></h2>
+  <p>You have it from the start. Just don't give up!</p>
+  <br/>
+  <!--@formatter:off-->
+  <div style="text-align: center;">
+    <img src="cov.png" style="width: 90%;" alt=""/>
+  </div>
+  <!--@formatter:on-->
+</div>
+
+<div id="doc" class="step slide" data-x="4400" data-y="4300" data-scale="1">
+  <h2>Auto-documentation based on tests</h2>
+  <p>Not perfect but much better then nothing, especially with 100% code coverage and reasonably good messages <i>doc/index.html</i></p>
+  <br/>
+  <!--@formatter:on-->
+  <div style="text-align: center;">
+    <img src="doc.png" style="width: 90%;" alt=""/>
+  </div>
 </div>
 
 
@@ -363,7 +449,7 @@ git push -u origin master
       timers = {};
 
     function typeText(id, $element, callback) {
-      var TIMEOUT = 5,
+      var TIMEOUT = 3,
         code;
       if (!!timers[id]) {
         clearTimeout(timers[id]);
