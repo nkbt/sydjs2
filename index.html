@@ -522,10 +522,22 @@ Done, without errors.
         $h = $element.querySelector('h2, h3');
       $li.appendChild($a);
       $a.title = $h && $h.innerHTML || $element.id;
+      $a.dataset.id = $element.id;
       $a.href = ['#', $element.id].join('');
       $a.innerHTML = $element.id;
       return document.querySelector('#nav').appendChild($li);
     });
+
+    document.body.addEventListener("impress:stepenter", function (event) {
+      Array.prototype.slice.apply(document.querySelectorAll('#nav a')).forEach(function ($a) {
+        if ($a.dataset.id === event.target.id) {
+          $a.classList.add('active');
+        } else {
+          $a.classList.remove('active');
+        }
+      });
+    }, false);
+
 
     impress().init();
   }());
