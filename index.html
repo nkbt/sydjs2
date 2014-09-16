@@ -203,75 +203,87 @@ node app
 </div>
 
 
-<div id="app-code" class="step slide" data-x="5500" data-y="1000">
-  <h2>Some text</h2>
-  <!--@formatter:off-->
-  <script type="text/plain" data-lang="json">
-{
-  "some": "code",
-}
-   </script>
-  <!--@formatter:on-->
+<div id="part2" class="title step" data-x="5500" data-y="1000">
+  <p class="try">Part 2</p>
+  <p>We want moar sugar</p>
+  <div class="footnote">
+    <p>... we have some</p>
+  </div>
 </div>
 
 
 <div id="expected" class="step slide" data-x="0" data-y="2000">
-  <h2>Some text</h2>
-  <!--@formatter:off-->
-  <pre class="hljs"><code> > node app
-<span class="hljs-function">alwaysNo</span>() should say "No." <span
-  class="hljs-string">No.</span>
-<span class="hljs-function">lib.alwaysYes</span>() should say "Yes!" <span
-  class="hljs-string">Yes!</span>
-<span style="background: rgba(0,255,0,0.2)"><span class="hljs-function">alwaysNo</span>()       should say "No."    <span
-  class="hljs-string">No.</span></span>
-  </code></pre>
-  <!--@formatter:on-->
+  <h2>What is a <b>good</b> NPM module?</h2>
+  <ol>
+    <li>Options</li>
+    <li>Custom Errors</li>
+    <li>Tests</li>
+    <li>More tests</li>
+    <li>100% coverage!</li>
+    <li>Documentation</li>
+  </ol>
+  <br/><br/>
+  <h2>What do we have now?</h2>
+  <p>...</p>
+
 </div>
 
 
-<div id="actual" class="step slide" data-x="1100" data-y="2000">
-  <h2>Some text</h2>
-  <!--@formatter:off-->
-  <pre class="hljs"><code> > node app
-<span class="hljs-function">alwaysNo</span>() should say "No." <span
-  class="hljs-string">No.</span>
-<span class="hljs-function">lib.alwaysYes</span>() should say "Yes!" <span
-  class="hljs-string">Yes!</span>
-<span style="background: rgba(255,0,0,0.3)"><span class="hljs-function">alwaysNo</span>()       should say "No."    <span
-  class="hljs-string">Yes!</span></span>
-  </code></pre>
-  <!--@formatter:on-->
+
+<div id="mmkay_" class="step slide" data-x="1100" data-y="2000">
+  <h2>What do I think of these?</h2>
+  <br/>
+  <ol>
+    <li>Options&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>Too easy!</b></li>
+    <li>Custom Errors&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>I may not need them...</b></li>
+    <li>Tests&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>Sounds like fun, but where to begin?</b></li>
+    <li>More tests&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>Look above</b></li>
+    <li>100% coverage!&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>WAT?</b></li>
+    <li>Documentation&nbsp;&nbsp;⇒&nbsp;&nbsp;<b>(╯°□°）╯︵ ┻━┻</b></li>
+  </ol>
+
 </div>
 
-<div id="wat" class="step slide" data-x="1700" data-y="3000" data-rotate-x="-90" data-rotate-y="20"
+<div id="good_news" class="title step" data-x="1700" data-y="3000" data-rotate-x="-90" data-rotate-y="20"
   data-scale="2">
-  <h2>Some picture</h2>
-  <img src="img/wat.jpg" style="display: block; width: 100%;" alt=""/>
+  <div style="text-align: center;">
+    <img src="app-for-that.png" style="width: 60%;" alt=""/>
+  </div>
 </div>
 
 
-<div id="files" class="step slide" data-x="2200" data-y="2000" data-scale="1">
-  <h2>Some text</h2>
+<div id="init_v2" class="step slide" data-x="2200" data-y="2000" data-scale="1">
+  <!--<br/>-->
+  <!--<br/>-->
+  <!--<p>Checkout <a href="https://github.com/nkbt/npm-template">https://github.com/nkbt/npm-template</a></>-->
+  <h2>Init v.2</h2>
   <!--@formatter:off-->
-  <pre><code class="json hljs">
-{
-  "some": "code",
-}
-  </code></pre>
+  <script type="text/plain" data-lang="bash">
+mkdir sydjs2-module
+cd sydjs2-module
+git init
+git remote add template https://github.com/nkbt/npm-template.git
+git pull template master
+# replace 'npm-template' with 'sydjs2-module', delete unwanted
+git commit -m "Init"
+git remote add origin git@github.com:nkbt/sydjs2-module.git
+git push -u origin master
+   </script>
   <!--@formatter:on-->
+  <br/>
+  <p>...or just download source and pick what you like</p>
 </div>
 
 
 <div id="missing" class="step slide" data-x="3300" data-y="2000" data-scale="1">
-  <h2>Some text</h2>
-  <!--@formatter:off-->
-  <pre><code class="json hljs">
-{
-  "some": "code",
-}
-  </code></pre>
-  <!--@formatter:on-->
+  <h2>Now you have:</h2>
+  <ol>
+    <li>Configurable module template</li>
+    <li>Custom Errors</li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
 </div>
 
 
